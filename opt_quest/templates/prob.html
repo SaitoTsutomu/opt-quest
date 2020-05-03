@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block body %}
+{% set cont = data["probs"][prob] %}
+<table border="1" style="margin : 12px;">
+    <tr>
+        <td style="padding : 6px;">{{ cont['desc'] | safe }}</td>
+    </tr>
+</table>
+<form action="{{ url_for('answer', user=user, prob=prob) }}" method=post>
+    <table>
+        <tr>
+            <td>変数</td>
+            <td style="padding : 6px;">
+                {% for var in cont['vars'] %}
+                <input type="checkbox" name="vars" value="{{ loop.index0 }}"
+                    {{ 'checked' if ok and var.startswith('*') else '' }}>
+                {{ var.lstrip('*') }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>目的関数</td>
+            <td style="padding : 6px;">
+                {% for obj in cont['objs'] %}
+                <input type="radio" name="objs" value="{{ loop.index0 }}"
+                    {{ 'checked' if ok and obj.startswith('*') else '' }}>
+                {{ obj.lstrip('*') }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>制約条件</td>
+            <td style="padding : 6px;">
+                {% for cond in cont['conds'] %}
+                <input type="checkbox" name="conds" value="{{ loop.index0 }}"
+                    {{ 'checked' if ok and cond.startswith('*') else '' }}>
+                {{ cond.lstrip('*') }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="答える">
+</form>
+{% endblock %}

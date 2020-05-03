@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+<form action="{{ url_for('login') }}" method=post>
+    ユーザー名
+    <input type="text" name="user">
+    <input type="submit" value="開始">
+</form>
+{% endblock %}

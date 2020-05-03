@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+<ul>
+    {% for user, rt in group %}
+    <li><a href="{{ url_for('probs', user=user) }}">{{ user }} さん : {{ rt }} %</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

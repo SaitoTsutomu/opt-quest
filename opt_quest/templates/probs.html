@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<ul>
+    {% for ok, prob, name in problist %}
+    <li><a href="{{ url_for('prob', user=user, prob=prob) }}">
+            {{ '✓' if ok else '🗸' }} {{ prob }} - {{ name }}
+        </a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
