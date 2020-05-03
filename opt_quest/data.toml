@@ -233,7 +233,7 @@ name = "四色問題"
 desc = """\
 1つの県を1色とし、隣接する県は異なるように、日本全体を4色で塗る。
 <br>
-<img src="https://www.dropbox.com/s/7fn3j9iv5dzijox/fourcolor.png" width="150">
+<img src="https://www.dropbox.com/s/7fn3j9iv5dzijox/fourcolor.png?dl=0" width="150">
 """
 vars = [
     "各県の色",
@@ -255,7 +255,7 @@ desc = """\
 8つのアトラクションがある遊園地でデートをする。<br>
 200分の制限時間の中で総満足度を最大化しよう。
 <br>
-<img src="https://www.dropbox.com/s/qzgtrbg1otono49/datecourse.png" width="200">
+<img src="https://www.dropbox.com/s/qzgtrbg1otono49/datecourse.png?dl=0" width="200">
 
 <h3>ヒント</h3>
 200分という制限時間があるため、全てのアトラクションを回れるとは限らない。
