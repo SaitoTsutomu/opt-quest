@@ -15,7 +15,7 @@ class Bingo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user = db.Column(db.Text)
     prob = db.Column(db.Text)
-    created_at = db.Column(db.DATETIME)
+    created_at = db.Column(db.DateTime)
 
     def __repr__(self):
         return f"<id={self.user} title={self.prob}>"
